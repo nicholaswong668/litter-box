@@ -1,0 +1,55 @@
+<svg width="1200" height="1500" viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1500" fill="#F5F1EA"/>
+  <rect x="58" y="58" width="1084" height="1384" rx="34" fill="#FCFAF7" stroke="#E7DED2"/>
+  <circle cx="969" cy="228" r="169" fill="#E9E1D6"/>
+  <circle cx="210" cy="1222" r="180" fill="#EFE7DD"/>
+  <path d="M708 273C748 231 816 185 882 186C968 188 1038 242 1076 326C1114 411 1117 505 1080 588C1048 661 985 723 899 734C815 744 744 698 694 628C655 572 631 497 631 433C631 375 666 316 708 273Z" fill="#D8CCBE"/>
+  <path d="M292 1095C319 974 390 857 511 811C627 767 763 800 853 883C948 972 981 1106 939 1222C897 1334 785 1413 663 1430C540 1448 427 1406 348 1317C294 1257 275 1172 292 1095Z" fill="#E8DED1"/>
+  <path d="M706 409C706 325 777 258 863 258H895C989 258 1064 333 1064 427V884C1064 983 983 1064 884 1064H845C768 1064 706 1002 706 925V409Z" fill="#FEFDFC" stroke="#D7CEC3" stroke-width="6"/>
+  <path d="M726 435C726 338 806 260 904 260H920C1008 260 1080 332 1080 420V852C1080 959 993 1046 886 1046H870C791 1046 726 981 726 902V435Z" fill="url(#paint0_linear_158_4)"/>
+  <rect x="776" y="1138" width="54" height="180" rx="27" fill="#B7AEA4"/>
+  <rect x="954" y="1138" width="54" height="180" rx="27" fill="#AAA195"/>
+  <path d="M807 661C807 587 868 526 942 526C1016 526 1077 587 1077 661V701C1077 775 1016 836 942 836C868 836 807 775 807 701V661Z" fill="url(#paint1_linear_158_4)"/>
+  <path d="M860 754C867 711 901 680 944 680C987 680 1020 711 1028 754L1040 821H848L860 754Z" fill="#C2BDB8"/>
+  <rect x="929" y="821" width="96" height="96" rx="48" fill="#101010"/>
+  <circle cx="964" cy="855" r="4" fill="#F6F6F6"/>
+  <circle cx="997" cy="855" r="4" fill="#F6F6F6"/>
+  <circle cx="964" cy="888" r="4" fill="#F6F6F6"/>
+  <circle cx="997" cy="888" r="4" fill="#F6F6F6"/>
+  <path d="M941 931C941 924 947 918 954 918H1000C1007 918 1013 924 1013 931V990C1013 997 1007 1003 1000 1003H954C947 1003 941 997 941 990V931Z" fill="#BDB5AA"/>
+  <path d="M287 1000C348 921 458 887 551 916C639 943 704 1011 723 1103C741 1188 711 1276 647 1338C587 1396 503 1423 422 1408C343 1394 271 1342 239 1266C208 1190 228 1078 287 1000Z" fill="#E8D5BF"/>
+  <path d="M306 1095C305 1032 352 977 416 966C478 956 539 994 562 1052L605 1162C631 1228 614 1305 561 1352C508 1399 427 1410 362 1380C302 1352 265 1291 267 1228L306 1095Z" fill="#FFF7EE"/>
+  <path d="M342 1051C372 1024 420 1008 460 1017C509 1029 548 1068 560 1116C572 1167 555 1221 519 1261C485 1298 434 1319 387 1310C339 1301 300 1262 289 1214C277 1163 301 1090 342 1051Z" fill="#F4B887"/>
+  <path d="M356 1134C391 1092 459 1089 500 1129C540 1169 542 1236 503 1278C464 1319 398 1321 358 1284C317 1247 319 1180 356 1134Z" fill="#FFF5EA"/>
+  <circle cx="399" cy="1169" r="8" fill="#473127"/>
+  <circle cx="472" cy="1169" r="8" fill="#473127"/>
+  <path d="M432 1204C446 1197 461 1203 468 1212C453 1229 429 1229 417 1212C421 1208 426 1206 432 1204Z" fill="#E18E97"/>
+  <path d="M332 1099L292 1027L366 1067L332 1099Z" fill="#FFF7EE"/>
+  <path d="M521 1092L569 1029L518 1067L521 1092Z" fill="#FFF7EE"/>
+  <path d="M579 970C621 1007 648 1028 689 1068" stroke="#D83222" stroke-width="28" stroke-linecap="round"/>
+  <path d="M936 316C1037 350 1089 381 1142 435" stroke="#E13A2B" stroke-width="34" stroke-linecap="round"/>
+  <path d="M1061 316C1078 396 1080 590 1074 887" stroke="#CC241B" stroke-width="28" stroke-linecap="round"/>
+  <path d="M1044 348C1072 339 1105 343 1122 368C1138 391 1139 427 1121 449C1100 474 1061 469 1032 454C997 437 973 406 955 372C984 347 1011 334 1044 348Z" fill="#C1100D"/>
+  <path d="M1031 347C1001 361 983 386 976 411C1008 420 1044 418 1068 396C1087 378 1087 347 1031 347Z" fill="#E63421"/>
+  <text x="124" y="170" fill="#7C6D5C" font-family="Arial, Helvetica, sans-serif" font-size="28" letter-spacing="7">EDITORIAL POSTER</text>
+  <text x="124" y="260" fill="#141414" font-family="Arial, Helvetica, sans-serif" font-size="118" font-weight="700">Modern</text>
+  <text x="124" y="370" fill="#141414" font-family="Arial, Helvetica, sans-serif" font-size="118" font-weight="700">living</text>
+  <text x="124" y="480" fill="#141414" font-family="Arial, Helvetica, sans-serif" font-size="118" font-weight="700">for cats</text>
+  <text x="124" y="580" fill="#6C645E" font-family="Arial, Helvetica, sans-serif" font-size="33">Designed for European and North American pet homes.</text>
+  <text x="124" y="628" fill="#6C645E" font-family="Arial, Helvetica, sans-serif" font-size="33">Clean silhouettes, premium comfort, and everyday ease.</text>
+  <rect x="125" y="700" width="246" height="58" rx="29" fill="#141414"/>
+  <text x="170" y="738" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Cat-first design</text>
+  <rect x="386" y="700" width="218" height="58" rx="29" fill="#FCFAF7" stroke="#CFC6BB"/>
+  <text x="432" y="738" fill="#4E4740" font-family="Arial, Helvetica, sans-serif" font-size="26">Smart comfort</text>
+  <defs>
+    <linearGradient id="paint0_linear_158_4" x1="903" y1="260" x2="903" y2="1046" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FEFDFC"/>
+      <stop offset="0.51" stop-color="#F6F2EC"/>
+      <stop offset="1" stop-color="#D1CAC3"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_158_4" x1="942" y1="526" x2="942" y2="836" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2F73F1"/>
+      <stop offset="1" stop-color="#1D4CB6"/>
+    </linearGradient>
+  </defs>
+</svg>

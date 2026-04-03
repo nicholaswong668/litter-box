@@ -6,6 +6,7 @@ export const navigation = [
 ];
 
 const assetBase = import.meta.env.BASE_URL;
+export const heroPoster = `${assetBase}hero-cat-poster.svg`;
 
 export const whatsappHref =
   "https://wa.me/1234567890?text=Hi%2C%20I%27m%20interested%20in%20your%20litter%20box%20products.";
@@ -18,6 +19,14 @@ export const products = [
     price: 599,
     category: "Automatic Series",
     image: `${assetBase}id1/litter-box-27.jpg`,
+    gallery: [
+      `${assetBase}id1/litter-box-27.jpg`,
+      `${assetBase}id1/litter-box-28.jpg`,
+      `${assetBase}id1/litter-box-29.jpg`,
+      `${assetBase}id1/litter-box-30.jpg`,
+      `${assetBase}id1/litter-box-31.jpg`,
+      `${assetBase}id1/litter-box-32.jpg`,
+    ],
     description:
       "This self cleaning litter box is built for cat owners who want less daily scooping and a cleaner home. Its generous 95L drum, 15L waste bin, quiet automatic cleaning, and built-in odor control make it well suited for single-cat or multi-cat homes.",
     intro:
@@ -43,6 +52,16 @@ export const products = [
     price: 599,
     category: "Automatic Series",
     image: `${assetBase}id2/litter-box-40.jpg`,
+    gallery: [
+      `${assetBase}id2/litter-box-40.jpg`,
+      `${assetBase}id2/litter-box-41.jpg`,
+      `${assetBase}id2/litter-box-42.jpg`,
+      `${assetBase}id2/litter-box-43.jpg`,
+      `${assetBase}id2/litter-box-44.jpg`,
+      `${assetBase}id2/litter-box-45.jpg`,
+      `${assetBase}id2/litter-box-46.jpg`,
+      `${assetBase}id2/litter-box-47.jpg`,
+    ],
     description:
       "This open-top self cleaning litter box is designed for cats that prefer a more open, less confining space while still giving owners the convenience of automatic cleaning.",
     intro:
@@ -68,6 +87,15 @@ export const products = [
     price: 599,
     category: "Semi-Automatic",
     image: `${assetBase}id3/litter-box-48.jpg`,
+    gallery: [
+      `${assetBase}id3/litter-box-48.jpg`,
+      `${assetBase}id3/litter-box-49.jpg`,
+      `${assetBase}id3/litter-box-50.jpg`,
+      `${assetBase}id3/litter-box-51.jpg`,
+      `${assetBase}id3/litter-box-52.jpg`,
+      `${assetBase}id3/litter-box-53.jpg`,
+      `${assetBase}id3/litter-box-54.jpg`,
+    ],
     description:
       "This automatic cat litter box is designed for kittens and medium-sized cats that need a quieter, safer self-cleaning setup.",
     intro:
@@ -93,6 +121,15 @@ export const products = [
     price: 599,
     category: "Essential Series",
     image: `${assetBase}id4/litter-box-55.jpg`,
+    gallery: [
+      `${assetBase}id4/litter-box-55.jpg`,
+      `${assetBase}id4/litter-box-56.jpg`,
+      `${assetBase}id4/litter-box-57.jpg`,
+      `${assetBase}id4/litter-box-58.jpg`,
+      `${assetBase}id4/litter-box-59.jpg`,
+      `${assetBase}id4/litter-box-60.jpg`,
+      `${assetBase}id4/litter-box-61.jpg`,
+    ],
     description:
       "This self cleaning cat litter box is built to make everyday litter care easier, cleaner, and more convenient for multi-cat homes.",
     intro:
@@ -119,6 +156,14 @@ export const products = [
     price: 599,
     category: "Accessories",
     image: `${assetBase}id5/litter-box-21.jpg`,
+    gallery: [
+      `${assetBase}id5/litter-box-21.jpg`,
+      `${assetBase}id5/litter-box-22.jpg`,
+      `${assetBase}id5/litter-box-23.jpg`,
+      `${assetBase}id5/litter-box-24.jpg`,
+      `${assetBase}id5/litter-box-25.jpg`,
+      `${assetBase}id5/litter-box-26.jpg`,
+    ],
     description:
       "This smart self-cleaning litter box combines convenience and modern technology. With APP remote control, automatic waste separation, and an external odor exhaust system, it helps reduce daily litter box maintenance while keeping your home cleaner and fresher.",
     intro:
@@ -145,6 +190,9 @@ export const products = [
     category: "Accessories",
     image:
       "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80",
+    ],
     description:
       "Double-layer trapping mat that reduces tracking and keeps modern spaces clean and polished.",
     intro:
@@ -170,6 +218,9 @@ export const products = [
     category: "Accessories",
     image:
       "https://images.unsplash.com/photo-1493409137604-0901c55e4456?auto=format&fit=crop&w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1493409137604-0901c55e4456?auto=format&fit=crop&w=1200&q=80",
+    ],
     description:
       "Replacement sealed waste drawer for compatible automatic models.",
     intro:
@@ -195,6 +246,9 @@ export const products = [
     category: "Accessories",
     image:
       "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=1200&q=80",
+    ],
     description:
       "Replacement carbon filter pack for long-term odor management.",
     intro:
@@ -220,6 +274,9 @@ export const products = [
     category: "Essential Series",
     image:
       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=1200&q=80",
+    ],
     description:
       "Ergonomic scoop designed for simple daily cleaning and accessory bundles.",
     intro:
@@ -245,6 +302,9 @@ export const products = [
     category: "Portable",
     image:
       "https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=1200&q=80",
+    ],
     description:
       "Portable foldable litter box for travel, short-term stays, and compact storage.",
     intro:
@@ -270,6 +330,9 @@ export const products = [
     category: "Automatic Series",
     image:
       "https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1200&q=80",
+    ],
     description:
       "Add-on odor treatment module for enhanced air freshness around automatic units.",
     intro:
@@ -295,6 +358,9 @@ export const products = [
     category: "Accessories",
     image:
       "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80",
+    ],
     description:
       "A ready-to-order liner refill kit for routine maintenance and repeat purchases.",
     intro:

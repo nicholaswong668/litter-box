@@ -4,6 +4,7 @@ import SiteHeader from "../components/SiteHeader.vue";
 import SiteFooter from "../components/SiteFooter.vue";
 import WhatsAppFloat from "../components/WhatsAppFloat.vue";
 import {
+  heroPoster,
   products,
   stats,
   features,
@@ -54,16 +55,16 @@ const highlights = [
         <div class="hero-card">
           <div class="hero-image-wrap">
             <img
-              :src="featuredProducts[0].image"
-              alt="Premium litter box with cat lifestyle aesthetic"
+              :src="heroPoster"
+              alt="Editorial cat poster for premium pet lifestyle storefront"
             />
           </div>
           <div class="hero-card-meta">
             <div>
-              <p class="card-kicker">Featured Model</p>
-              <h3>{{ featuredProducts[0].name }}</h3>
+              <p class="card-kicker">Editorial Poster</p>
+              <h3>Modern Cat Living</h3>
             </div>
-            <strong>${{ featuredProducts[0].price.toFixed(2) }}</strong>
+            <strong>Display Only</strong>
           </div>
         </div>
       </section>

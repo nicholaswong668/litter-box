@@ -4,6 +4,7 @@ import { RouterLink, useRoute } from "vue-router";
 import SiteHeader from "../components/SiteHeader.vue";
 import SiteFooter from "../components/SiteFooter.vue";
 import WhatsAppFloat from "../components/WhatsAppFloat.vue";
+import ProductGallery from "../components/ProductGallery.vue";
 import { products, whatsappHref } from "../data";
 
 const route = useRoute();
@@ -29,48 +30,68 @@ const relatedProducts = computed(() =>
 
     <main>
       <section class="section-block detail-layout">
-        <div class="detail-image">
-          <img :src="product.image" :alt="product.name" />
-        </div>
+        <ProductGallery :images="product.gallery" :alt="product.name" />
 
         <div class="detail-copy">
           <p class="section-kicker">{{ product.category }}</p>
           <h2 class="detail-title">{{ product.name }}</h2>
+          <div class="amazon-divider"></div>
           <p class="detail-intro">{{ product.intro }}</p>
-          <strong class="detail-price">${{ product.price.toFixed(2) }}</strong>
+          <p class="amazon-description">{{ product.description }}</p>
+          <div class="detail-panel detail-bullets">
+            <h3>About this item</h3>
+            <ul class="detail-list">
+              <li v-for="item in product.features" :key="item">{{ item }}</li>
+            </ul>
+          </div>
+        </div>
 
-          <div class="detail-actions">
-            <a class="button-primary" :href="whatsappHref" target="_blank" rel="noreferrer">
+        <aside class="buy-box">
+          <p class="buy-box-price">${{ product.price.toFixed(2) }}</p>
+          <p class="buy-box-tax">Price shown for catalog display and inquiry reference.</p>
+          <div class="buy-box-row">
+            <span>Availability</span>
+            <strong>In Stock</strong>
+          </div>
+          <div class="buy-box-row">
+            <span>MOQ</span>
+            <strong>Contact Seller</strong>
+          </div>
+          <div class="buy-box-row">
+            <span>Shipping</span>
+            <strong>Quote on Request</strong>
+          </div>
+          <div class="buy-box-actions">
+            <a class="button-primary buy-box-button" :href="whatsappHref" target="_blank" rel="noreferrer">
               Inquire on WhatsApp
             </a>
-            <RouterLink class="button-secondary" to="/products">
+            <a class="button-secondary buy-box-button" href="mailto:sales@litterbox.com">
+              Email Seller
+            </a>
+            <RouterLink class="buy-box-link" to="/products">
               Back to Products
             </RouterLink>
           </div>
-
-          <div class="detail-panel">
-            <h3>Overview</h3>
-            <p>{{ product.description }}</p>
-          </div>
-        </div>
+        </aside>
       </section>
 
       <section class="detail-sections">
         <article class="detail-panel">
-          <h3>Key Features</h3>
-          <ul class="detail-list">
-            <li v-for="item in product.features" :key="item">{{ item }}</li>
-          </ul>
-        </article>
-
-        <article class="detail-panel">
-          <h3>Specifications</h3>
+          <h3>Product Specifications</h3>
           <div class="spec-grid">
             <div v-for="(value, key) in product.specs" :key="key" class="spec-row">
               <span>{{ key }}</span>
               <strong>{{ value }}</strong>
             </div>
           </div>
+        </article>
+
+        <article class="detail-panel">
+          <h3>Seller Notes</h3>
+          <p>
+            This page is structured like a marketplace detail layout so buyers can
+            review images, selling points, and specs quickly before contacting you.
+          </p>
         </article>
       </section>
 
