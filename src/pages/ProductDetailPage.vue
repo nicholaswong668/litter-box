@@ -22,6 +22,62 @@ const relatedProducts = computed(() =>
     )
     .slice(0, 3),
 );
+
+function partitions(words, lineCount) {
+  if (lineCount === 1) {
+    return [[words.join(" ")]];
+  }
+
+  const results = [];
+
+  function backtrack(start, remaining, current) {
+    if (remaining === 1) {
+      const tail = words.slice(start).join(" ");
+      if (tail) results.push([...current, tail]);
+      return;
+    }
+
+    for (let i = start + 1; i <= words.length - remaining + 1; i += 1) {
+      const segment = words.slice(start, i).join(" ");
+      if (!segment) continue;
+      backtrack(i, remaining - 1, [...current, segment]);
+    }
+  }
+
+  backtrack(0, lineCount, []);
+  return results;
+}
+
+function splitTitle(title) {
+  const words = title.split(" ").filter(Boolean);
+  if (words.length <= 4) return [title];
+
+  let best = [title];
+  let bestScore = Number.POSITIVE_INFINITY;
+
+  for (let count = 1; count <= Math.min(3, words.length); count += 1) {
+    const candidateGroups = partitions(words, count);
+
+    for (const lines of candidateGroups) {
+      const lengths = lines.map((line) => line.length);
+      const maxLen = Math.max(...lengths);
+      const minLen = Math.min(...lengths);
+      const imbalance = maxLen - minLen;
+      const score = maxLen * 1.2 + imbalance * 0.45 + (count - 1) * 4;
+
+      if (score < bestScore) {
+        best = lines;
+        bestScore = score;
+      }
+    }
+  }
+
+  return best;
+}
+
+const titleLines = computed(() =>
+  product.value ? splitTitle(product.value.name) : [],
+);
 </script>
 
 <template>
@@ -40,7 +96,11 @@ const relatedProducts = computed(() =>
 
         <div class="detail-copy">
           <p class="section-kicker">{{ product.category }}</p>
-          <h2 class="detail-title">{{ product.name }}</h2>
+          <h2 class="detail-title">
+            <span v-for="line in titleLines" :key="line" class="detail-title-line">
+              {{ line }}
+            </span>
+          </h2>
           <p class="detail-inline-price">${{ product.price.toFixed(2) }}</p>
           <div class="detail-copy-block">
             <p class="amazon-description">{{ product.description }}</p>
