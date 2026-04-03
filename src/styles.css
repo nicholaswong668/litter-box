@@ -746,8 +746,7 @@ img {
   border-color: #171717;
 }
 
-.gallery-nav,
-.gallery-main-nav {
+.gallery-nav {
   height: 42px;
   border-radius: 999px;
   color: #171717;
@@ -756,25 +755,7 @@ img {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-.gallery-main-nav {
-  position: absolute;
-  top: 50%;
-  z-index: 2;
-  width: 44px;
-  background: rgba(255, 255, 255, 0.96);
-  transform: translateY(-50%);
-}
-
-.gallery-main-nav-left {
-  left: 16px;
-}
-
-.gallery-main-nav-right {
-  right: 16px;
-}
-
-.gallery-nav:disabled,
-.gallery-main-nav:disabled {
+.gallery-nav:disabled {
   cursor: default;
   opacity: 0.35;
 }

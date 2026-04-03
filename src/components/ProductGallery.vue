@@ -43,11 +43,17 @@ function slideLeft() {
   if (startIndex.value > 0) {
     startIndex.value -= 1;
   }
+  if (selectedIndex.value > 0) {
+    selectedIndex.value -= 1;
+  }
 }
 
 function slideRight() {
   if (startIndex.value + visibleCount < props.images.length) {
     startIndex.value += 1;
+  }
+  if (selectedIndex.value < props.images.length - 1) {
+    selectedIndex.value += 1;
   }
 }
 </script>
@@ -55,25 +61,7 @@ function slideRight() {
 <template>
   <div class="gallery-shell">
     <div class="detail-image gallery-main">
-      <button
-        class="gallery-main-nav gallery-main-nav-left"
-        type="button"
-        :disabled="selectedIndex === 0"
-        @click="selectImage(selectedIndex - 1)"
-      >
-        &lt;
-      </button>
-
       <img :src="images[selectedIndex]" :alt="alt" />
-
-      <button
-        class="gallery-main-nav gallery-main-nav-right"
-        type="button"
-        :disabled="selectedIndex === images.length - 1"
-        @click="selectImage(selectedIndex + 1)"
-      >
-        &gt;
-      </button>
     </div>
 
     <div class="gallery-strip">
