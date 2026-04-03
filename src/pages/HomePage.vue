@@ -86,11 +86,10 @@ const highlights = [
         </div>
 
         <div class="product-grid featured-grid">
-          <RouterLink
+          <article
             v-for="product in featuredProducts"
             :key="product.id"
-            class="product-card product-link-card"
-            :to="`/products/${product.slug}`"
+            class="product-card"
           >
             <div class="product-image">
               <img :src="product.image" :alt="product.name" />
@@ -101,10 +100,12 @@ const highlights = [
               <p class="product-description">{{ product.description }}</p>
               <div class="product-footer">
                 <strong>${{ product.price.toFixed(2) }}</strong>
-                <span>View Details</span>
+                <a :href="whatsappHref" target="_blank" rel="noreferrer">
+                  Inquire Now
+                </a>
               </div>
             </div>
-          </RouterLink>
+          </article>
         </div>
       </section>
 
