@@ -6,7 +6,11 @@ export const navigation = [
 ];
 
 const assetBase = import.meta.env.BASE_URL;
-export const heroPoster = `${assetBase}hero-cat-poster.svg`;
+export const heroPoster = {
+  primary: `${assetBase}hero/hero-woman-cat.jpg`,
+  secondary: `${assetBase}hero/hero-two-cats-chair.jpg`,
+  tertiary: `${assetBase}hero/hero-cat-home.jpg`,
+};
 
 export const whatsappHref =
   "https://wa.me/1234567890?text=Hi%2C%20I%27m%20interested%20in%20your%20litter%20box%20products.";

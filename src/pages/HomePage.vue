@@ -53,18 +53,41 @@ const highlights = [
         </div>
 
         <div class="hero-card">
-          <div class="hero-image-wrap">
-            <img
-              :src="heroPoster"
-              alt="Editorial cat poster for premium pet lifestyle storefront"
-            />
+          <div class="hero-collage">
+            <div class="hero-collage-main">
+              <img
+                :src="heroPoster.primary"
+                alt="Woman cuddling a cat in a warm modern home"
+              />
+            </div>
+            <div class="hero-collage-side">
+              <div class="hero-collage-top">
+                <img
+                  :src="heroPoster.secondary"
+                  alt="Two cats relaxing together in a modern living room"
+                />
+              </div>
+              <div class="hero-collage-bottom">
+                <img
+                  :src="heroPoster.tertiary"
+                  alt="Cat enjoying a cozy indoor home scene"
+                />
+              </div>
+            </div>
+            <div class="hero-collage-overlay">
+              <span>Warm Home Story</span>
+              <p>
+                Friendly cats, soft interiors, and a joyful family-home mood
+                for modern pet living.
+              </p>
+            </div>
           </div>
           <div class="hero-card-meta">
             <div>
-              <p class="card-kicker">Editorial Poster</p>
-              <h3>Modern Cat Living</h3>
+              <p class="card-kicker">Lifestyle Hero</p>
+              <h3>Happy Cats At Home</h3>
             </div>
-            <strong>Display Only</strong>
+            <strong>Licensed Stock</strong>
           </div>
         </div>
       </section>
