@@ -505,15 +505,14 @@ img {
 
 .detail-title {
   margin: 0;
-  max-width: 100%;
-  font-size: clamp(1.3rem, 1.65vw, 1.9rem);
+  max-width: 16ch;
+  font-size: clamp(1.15rem, 1.4vw, 1.65rem);
   font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.16;
-}
-
-.detail-title-line {
-  display: block;
+  letter-spacing: -0.01em;
+  line-height: 1.26;
+  text-wrap: pretty;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .detail-intro {

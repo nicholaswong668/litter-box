@@ -22,42 +22,6 @@ const relatedProducts = computed(() =>
     )
     .slice(0, 3),
 );
-
-function splitTitleIntoThreeLines(title) {
-  const words = title.split(" ").filter(Boolean);
-  if (words.length <= 3) return words;
-
-  let best = [title];
-  let bestScore = Number.POSITIVE_INFINITY;
-
-  for (let i = 1; i < words.length - 1; i += 1) {
-    for (let j = i + 1; j < words.length; j += 1) {
-      const lines = [
-        words.slice(0, i).join(" "),
-        words.slice(i, j).join(" "),
-        words.slice(j).join(" "),
-      ];
-
-      if (lines.some((line) => !line)) continue;
-
-      const lengths = lines.map((line) => line.length);
-      const max = Math.max(...lengths);
-      const min = Math.min(...lengths);
-      const score = max - min;
-
-      if (score < bestScore) {
-        best = lines;
-        bestScore = score;
-      }
-    }
-  }
-
-  return best;
-}
-
-const titleLines = computed(() =>
-  product.value ? splitTitleIntoThreeLines(product.value.name) : [],
-);
 </script>
 
 <template>
@@ -76,11 +40,7 @@ const titleLines = computed(() =>
 
         <div class="detail-copy">
           <p class="section-kicker">{{ product.category }}</p>
-          <h2 class="detail-title">
-            <span v-for="line in titleLines" :key="line" class="detail-title-line">
-              {{ line }}
-            </span>
-          </h2>
+          <h2 class="detail-title">{{ product.name }}</h2>
           <p class="detail-inline-price">${{ product.price.toFixed(2) }}</p>
           <div class="detail-copy-block">
             <p class="amazon-description">{{ product.description }}</p>
