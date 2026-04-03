@@ -17,6 +17,16 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (function () {
+        var redirect = sessionStorage.getItem("gh-pages-spa-redirect");
+        if (!redirect) return;
+        sessionStorage.removeItem("gh-pages-spa-redirect");
+        var path = redirect;
+        if (path.charAt(0) !== "/") path = "/" + path;
+        window.history.replaceState(null, "", path);
+      })();
+    </script>
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
