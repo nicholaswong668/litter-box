@@ -36,10 +36,12 @@ const relatedProducts = computed(() =>
           <p class="section-kicker">{{ product.category }}</p>
           <h2 class="detail-title">{{ product.name }}</h2>
           <div class="amazon-divider"></div>
-          <p class="detail-intro">{{ product.intro }}</p>
-          <p class="amazon-description">{{ product.description }}</p>
+          <div class="detail-copy-block">
+            <p class="detail-intro">{{ product.intro }}</p>
+            <p class="amazon-description">{{ product.description }}</p>
+          </div>
           <div class="detail-panel detail-bullets">
-            <h3>About this item</h3>
+            <h3>Key Features</h3>
             <ul class="detail-list">
               <li v-for="item in product.features" :key="item">{{ item }}</li>
             </ul>

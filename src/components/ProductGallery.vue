@@ -54,17 +54,30 @@ function slideRight() {
 
 <template>
   <div class="gallery-shell">
-    <div class="detail-image">
+    <div class="detail-image gallery-main">
+      <button
+        class="gallery-main-nav gallery-main-nav-left"
+        type="button"
+        :disabled="selectedIndex === 0"
+        @click="selectImage(selectedIndex - 1)"
+      >
+        &lt;
+      </button>
+
       <img :src="images[selectedIndex]" :alt="alt" />
+
+      <button
+        class="gallery-main-nav gallery-main-nav-right"
+        type="button"
+        :disabled="selectedIndex === images.length - 1"
+        @click="selectImage(selectedIndex + 1)"
+      >
+        &gt;
+      </button>
     </div>
 
     <div class="gallery-strip">
-      <button
-        class="gallery-nav"
-        type="button"
-        :disabled="startIndex === 0"
-        @click="slideLeft"
-      >
+      <button class="gallery-nav" type="button" :disabled="startIndex === 0" @click="slideLeft">
         &lt;
       </button>
 
@@ -81,12 +94,7 @@ function slideRight() {
         </button>
       </div>
 
-      <button
-        class="gallery-nav"
-        type="button"
-        :disabled="startIndex + visibleCount >= images.length"
-        @click="slideRight"
-      >
+      <button class="gallery-nav" type="button" :disabled="startIndex + visibleCount >= images.length" @click="slideRight">
         &gt;
       </button>
     </div>
