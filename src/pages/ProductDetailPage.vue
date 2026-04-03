@@ -29,72 +29,68 @@ const relatedProducts = computed(() =>
     <SiteHeader />
 
     <main>
+      <section class="detail-back-row">
+        <RouterLink class="detail-back-link" to="/products">
+          &larr; Back
+        </RouterLink>
+      </section>
+
       <section class="section-block detail-layout">
         <ProductGallery :images="product.gallery" :alt="product.name" />
 
         <div class="detail-copy">
           <p class="section-kicker">{{ product.category }}</p>
           <h2 class="detail-title">{{ product.name }}</h2>
-          <div class="amazon-divider"></div>
+          <p class="detail-inline-price">${{ product.price.toFixed(2) }}</p>
           <div class="detail-copy-block">
-            <p class="detail-intro">{{ product.intro }}</p>
             <p class="amazon-description">{{ product.description }}</p>
           </div>
-          <div class="detail-panel detail-bullets">
-            <h3>Key Features</h3>
-            <ul class="detail-list">
+
+          <div class="detail-section">
+            <h3>Specifications</h3>
+            <div class="spec-grid spec-grid-compact">
+              <div v-for="(value, key) in product.specs" :key="key" class="spec-row spec-row-plain">
+                <span>{{ key }}:</span>
+                <strong>{{ value }}</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="amazon-divider"></div>
+
+          <div class="detail-section">
+            <h3>Features</h3>
+            <ul class="detail-list detail-check-list">
               <li v-for="item in product.features" :key="item">{{ item }}</li>
             </ul>
           </div>
-        </div>
 
-        <aside class="buy-box">
-          <p class="buy-box-price">${{ product.price.toFixed(2) }}</p>
-          <p class="buy-box-tax">Price shown for catalog display and inquiry reference.</p>
-          <div class="buy-box-row">
-            <span>Availability</span>
-            <strong>In Stock</strong>
-          </div>
-          <div class="buy-box-row">
-            <span>MOQ</span>
-            <strong>Contact Seller</strong>
-          </div>
-          <div class="buy-box-row">
-            <span>Shipping</span>
-            <strong>Quote on Request</strong>
-          </div>
-          <div class="buy-box-actions">
-            <a class="button-primary buy-box-button" :href="whatsappHref" target="_blank" rel="noreferrer">
-              Inquire on WhatsApp
+          <div class="detail-actions detail-actions-wide">
+            <a class="button-whatsapp" :href="whatsappHref" target="_blank" rel="noreferrer">
+              Contact on WhatsApp
             </a>
-            <a class="button-secondary buy-box-button" href="mailto:sales@litterbox.com">
-              Email Seller
+            <a class="button-secondary detail-secondary-button" href="mailto:sales@litterbox.com">
+              Inquire Now
             </a>
-            <RouterLink class="buy-box-link" to="/products">
-              Back to Products
-            </RouterLink>
           </div>
-        </aside>
-      </section>
 
-      <section class="detail-sections">
-        <article class="detail-panel">
-          <h3>Product Specifications</h3>
-          <div class="spec-grid">
-            <div v-for="(value, key) in product.specs" :key="key" class="spec-row">
-              <span>{{ key }}</span>
-              <strong>{{ value }}</strong>
+          <div class="amazon-divider"></div>
+
+          <div class="detail-trust-grid">
+            <div class="detail-trust-item">
+              <strong>Free Shipping</strong>
+              <span>On orders over $100</span>
+            </div>
+            <div class="detail-trust-item">
+              <strong>Easy Returns</strong>
+              <span>30-day guarantee</span>
+            </div>
+            <div class="detail-trust-item">
+              <strong>Secure Payment</strong>
+              <span>100% protected</span>
             </div>
           </div>
-        </article>
-
-        <article class="detail-panel">
-          <h3>Seller Notes</h3>
-          <p>
-            This page is structured like a marketplace detail layout so buyers can
-            review images, selling points, and specs quickly before contacting you.
-          </p>
-        </article>
+        </div>
       </section>
 
       <section v-if="relatedProducts.length" class="section-block">
