@@ -4,7 +4,7 @@ import { RouterLink } from "vue-router";
 import SiteHeader from "../components/SiteHeader.vue";
 import SiteFooter from "../components/SiteFooter.vue";
 import WhatsAppFloat from "../components/WhatsAppFloat.vue";
-import { heroPoster, products, features, whatsappHref } from "../data";
+import { products, features, whatsappHref } from "../data";
 
 const featuredProducts = products.slice(0, 6);
 const email = ref("");
@@ -51,38 +51,6 @@ function handleSubscribe() {
             >
               Contact Seller
             </a>
-          </div>
-        </div>
-
-        <div class="hero-card hero-card-reference">
-          <div class="hero-collage hero-collage-reference">
-            <div class="hero-collage-main">
-              <img
-                :src="heroPoster.primary"
-                alt="Woman cuddling a cat in a warm modern home"
-              />
-            </div>
-            <div class="hero-collage-side">
-              <div class="hero-collage-top">
-                <img
-                  :src="heroPoster.secondary"
-                  alt="Two cats relaxing together in a modern living room"
-                />
-              </div>
-              <div class="hero-collage-bottom">
-                <img
-                  :src="heroPoster.tertiary"
-                  alt="Cat enjoying a cozy indoor home scene"
-                />
-              </div>
-            </div>
-            <div class="hero-collage-overlay">
-              <span>Warm Home Story</span>
-              <p>
-                Friendly cats, soft interiors, and a joyful family-home mood for
-                modern pet living.
-              </p>
-            </div>
           </div>
         </div>
       </section>
