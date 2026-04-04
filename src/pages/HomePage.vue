@@ -5,6 +5,7 @@ import SiteHeader from "../components/SiteHeader.vue";
 import SiteFooter from "../components/SiteFooter.vue";
 import WhatsAppFloat from "../components/WhatsAppFloat.vue";
 import { products, whatsappHref } from "../data";
+import heroScene from "../../images/hero-scene.svg";
 
 const email = ref("");
 const subscribed = ref(false);
@@ -81,8 +82,8 @@ function handleSubscribe() {
 
           <div class="home-hero-media">
             <img
-              :src="showcaseProducts[0].image"
-              alt="Cat using modern litter box"
+              :src="heroScene"
+              alt="Cat and litter box in a cozy home scene"
             />
           </div>
         </div>
