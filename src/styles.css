@@ -1082,9 +1082,9 @@ img {
   margin: 0;
   font-size: 1.05rem;
   font-weight: 600;
-  line-height: 1.4;
-  min-height: 7.65em;
-  padding-bottom: 0.08em;
+  line-height: 1.42;
+  min-height: 7.95em;
+  padding-bottom: 0.16em;
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
