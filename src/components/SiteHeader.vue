@@ -6,10 +6,10 @@ import { navigation } from "../data";
 <template>
   <header class="site-header">
     <RouterLink class="logo-block" to="/">
-      <div class="logo-icon">LB</div>
+      <div class="logo-icon">ACJ</div>
       <div>
-        <p class="logo-label">Modern Pet Living</p>
-        <h1 class="logo-wordmark">Litter Box</h1>
+        <p class="logo-label">Anchongji (An Chong Ji)</p>
+        <h1 class="logo-wordmark">Anchongji（安宠吉）</h1>
       </div>
     </RouterLink>
 

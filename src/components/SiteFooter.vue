@@ -6,9 +6,9 @@ import { navigation } from "../data";
 <template>
   <footer class="site-footer">
     <div>
-      <h3>Litter Box</h3>
+      <h3>Anchongji（安宠吉）</h3>
       <p>
-        Curated litter box solutions for modern households, distributors, and
+        Curated pet care solutions for modern households, distributors, and
         premium pet retailers.
       </p>
     </div>
