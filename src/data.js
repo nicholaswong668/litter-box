@@ -2,7 +2,7 @@ export const navigation = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
   { label: "Why Us", href: "/#features" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const assetBase = import.meta.env.BASE_URL;
