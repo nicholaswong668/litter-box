@@ -5,7 +5,7 @@ import SiteHeader from "../components/SiteHeader.vue";
 import SiteFooter from "../components/SiteFooter.vue";
 import WhatsAppFloat from "../components/WhatsAppFloat.vue";
 import { products, whatsappHref } from "../data";
-import heroScene from "../../images/hero-scene.svg";
+import heroScene from "../../images/hero-home-scene.jpg";
 
 const email = ref("");
 const subscribed = ref(false);
