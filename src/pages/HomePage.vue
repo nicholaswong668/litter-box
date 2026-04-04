@@ -18,9 +18,15 @@ function toShortPoint(text) {
     .trim();
 }
 
+function toDisplayTitle(text) {
+  const compact = text.replace(/\s+/g, " ").trim();
+  return compact.length > 108 ? `${compact.slice(0, 105).trim()}...` : compact;
+}
+
 const showcaseProducts = computed(() =>
   products.slice(0, 5).map((product, index) => ({
     ...product,
+    displayTitle: toDisplayTitle(product.name),
     rating: [4.8, 4.6, 4.7, 4.5, 4.9][index] ?? 4.7,
     reviews: [1248, 892, 2156, 645, 978][index] ?? 860,
     points: product.features.slice(0, 3).map(toShortPoint),
@@ -118,7 +124,7 @@ function handleSubscribe() {
             </div>
 
             <div class="home-product-body">
-              <h4 class="home-product-title">{{ product.name }}</h4>
+              <h4 class="home-product-title">{{ product.displayTitle }}</h4>
 
               <div class="home-product-rating">
                 <div class="home-stars" aria-hidden="true">

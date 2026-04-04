@@ -1079,24 +1079,13 @@ img {
 }
 
 .home-product-title {
-  position: relative;
+  display: block;
   margin: 0;
   font-size: 1.05rem;
   font-weight: 600;
-  line-height: 1.42;
-  height: 7.95em;
+  line-height: 1.38;
+  height: 6.9em;
   overflow: hidden;
-}
-
-.home-product-title::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 42%;
-  height: 1.6em;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0), #ffffff 72%);
-  pointer-events: none;
 }
 
 .home-product-rating {
