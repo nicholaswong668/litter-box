@@ -1083,7 +1083,8 @@ img {
   font-size: 1.05rem;
   font-weight: 600;
   line-height: 1.4;
-  min-height: 7.35em;
+  min-height: 7.65em;
+  padding-bottom: 0.08em;
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
@@ -1166,7 +1167,8 @@ img {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.45;
-  height: 7.3em;
+  height: 7.55em;
+  padding-bottom: 0.08em;
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
