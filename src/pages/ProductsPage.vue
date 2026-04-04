@@ -10,11 +10,13 @@ const activeCategory = ref("All");
 const categories = ["All", ...new Set(products.map((item) => item.category))];
 
 function toShortPoint(text) {
-  return text
+  const shortened = text
     .replace(/\s+/g, " ")
     .split(/[.,;:]/)[0]
     .replace(/^with\s+/i, "")
     .trim();
+
+  return shortened.length > 58 ? `${shortened.slice(0, 55).trim()}...` : shortened;
 }
 
 const filteredProducts = computed(() =>
@@ -26,6 +28,10 @@ const filteredProducts = computed(() =>
 const displayProducts = computed(() =>
   filteredProducts.value.map((product) => ({
     ...product,
+    displayTitle:
+      product.name.length > 138
+        ? `${product.name.slice(0, 135).trim()}...`
+        : product.name,
     points: product.features.slice(0, 3).map(toShortPoint),
   })),
 );
@@ -72,7 +78,7 @@ const displayProducts = computed(() =>
             </div>
             <div class="catalog-meta">
               <p>{{ product.category }}</p>
-              <h4 class="catalog-title">{{ product.name }}</h4>
+              <h4 class="catalog-title">{{ product.displayTitle }}</h4>
               <ul class="catalog-points">
                 <li v-for="point in product.points" :key="point">{{ point }}</li>
               </ul>
