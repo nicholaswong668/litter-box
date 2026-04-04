@@ -8,10 +8,26 @@ import { products } from "../data";
 
 const activeCategory = ref("All");
 const categories = ["All", ...new Set(products.map((item) => item.category))];
+
+function toShortPoint(text) {
+  return text
+    .replace(/\s+/g, " ")
+    .split(/[.,;:]/)[0]
+    .replace(/^with\s+/i, "")
+    .trim();
+}
+
 const filteredProducts = computed(() =>
   activeCategory.value === "All"
     ? products
     : products.filter((item) => item.category === activeCategory.value),
+);
+
+const displayProducts = computed(() =>
+  filteredProducts.value.map((product) => ({
+    ...product,
+    points: product.features.slice(0, 3).map(toShortPoint),
+  })),
 );
 </script>
 
@@ -46,7 +62,7 @@ const filteredProducts = computed(() =>
 
         <div class="product-grid catalog-grid">
           <RouterLink
-            v-for="product in filteredProducts"
+            v-for="product in displayProducts"
             :key="product.id"
             class="catalog-card product-link-card"
             :to="`/products/${product.slug}`"
@@ -56,8 +72,14 @@ const filteredProducts = computed(() =>
             </div>
             <div class="catalog-meta">
               <p>{{ product.category }}</p>
-              <h4>{{ product.name }}</h4>
-              <strong>${{ product.price.toFixed(2) }}</strong>
+              <h4 class="catalog-title">{{ product.name }}</h4>
+              <ul class="catalog-points">
+                <li v-for="point in product.points" :key="point">{{ point }}</li>
+              </ul>
+              <div class="catalog-footer">
+                <strong>${{ product.price.toFixed(2) }}</strong>
+                <span class="catalog-view-button">View</span>
+              </div>
             </div>
           </RouterLink>
         </div>

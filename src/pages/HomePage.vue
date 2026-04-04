@@ -10,12 +10,20 @@ import heroScene from "../../images/hero-scene.svg";
 const email = ref("");
 const subscribed = ref(false);
 
+function toShortPoint(text) {
+  return text
+    .replace(/\s+/g, " ")
+    .split(/[.,;:]/)[0]
+    .replace(/^with\s+/i, "")
+    .trim();
+}
+
 const showcaseProducts = computed(() =>
   products.slice(0, 5).map((product, index) => ({
     ...product,
     rating: [4.8, 4.6, 4.7, 4.5, 4.9][index] ?? 4.7,
     reviews: [1248, 892, 2156, 645, 978][index] ?? 860,
-    points: product.features.slice(0, 3),
+    points: product.features.slice(0, 3).map(toShortPoint),
   })),
 );
 
@@ -110,7 +118,7 @@ function handleSubscribe() {
             </div>
 
             <div class="home-product-body">
-              <h4>{{ product.name }}</h4>
+              <h4 class="home-product-title">{{ product.name }}</h4>
 
               <div class="home-product-rating">
                 <div class="home-stars" aria-hidden="true">
