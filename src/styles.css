@@ -336,6 +336,8 @@ img {
 
 .catalog-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  grid-auto-rows: 1fr;
 }
 
 .product-card,
@@ -347,6 +349,9 @@ img {
 }
 
 .product-link-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
@@ -466,6 +471,7 @@ img {
   gap: 14px;
   padding: 18px;
   min-height: 430px;
+  flex: 1;
 }
 
 .newsletter-band {
