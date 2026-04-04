@@ -1,14 +1,49 @@
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { RouterLink } from "vue-router";
 import SiteHeader from "../components/SiteHeader.vue";
 import SiteFooter from "../components/SiteFooter.vue";
 import WhatsAppFloat from "../components/WhatsAppFloat.vue";
-import { products, features, whatsappHref } from "../data";
+import { products, whatsappHref } from "../data";
 
-const featuredProducts = products.slice(0, 6);
 const email = ref("");
 const subscribed = ref(false);
+
+const showcaseProducts = computed(() =>
+  products.slice(0, 5).map((product, index) => ({
+    ...product,
+    rating: [4.8, 4.6, 4.7, 4.5, 4.9][index] ?? 4.7,
+    reviews: [1248, 892, 2156, 645, 978][index] ?? 860,
+    points: product.features.slice(0, 3),
+  })),
+);
+
+const featureCards = [
+  {
+    icon: "OC",
+    title: "Advanced Odor Control",
+    description:
+      "Multi-layer odor management helps keep the litter area cleaner and fresher for everyday home use.",
+  },
+  {
+    icon: "PQ",
+    title: "Premium Quality",
+    description:
+      "Carefully designed litter box products built for export presentation, long-term use, and safer pet care.",
+  },
+  {
+    icon: "EF",
+    title: "Eco-Friendly",
+    description:
+      "Efficient litter usage and reusable accessory options help reduce waste while improving daily maintenance.",
+  },
+  {
+    icon: "EM",
+    title: "Easy Maintenance",
+    description:
+      "From self-cleaning systems to washable components, each model is designed to simplify routine care.",
+  },
+];
 
 function handleSubscribe() {
   if (!email.value) return;
@@ -25,83 +60,128 @@ function handleSubscribe() {
     <SiteHeader />
 
     <main>
-      <section class="hero-section hero-section-reference">
-        <div class="hero-copy">
-          <p class="section-kicker">Smart litter solutions for modern homes</p>
-          <h2>
-            Timeless cat care
-            <br />
-            <span>for elevated interiors</span>
-          </h2>
-          <p class="hero-text">
-            A polished, European-style storefront for automatic and premium
-            litter boxes. Built for direct seller contact, product browsing, and
-            fast frontend launch.
-          </p>
+      <section class="home-hero">
+        <div class="home-hero-inner">
+          <div class="home-hero-copy">
+            <h2>The Ultimate Litter Box for Your Cat</h2>
+            <p>
+              Experience the next generation of cat care with our premium,
+              self-cleaning litter boxes. Keep your home fresh and your cat
+              happy.
+            </p>
+            <div class="home-hero-actions">
+              <a class="home-button home-button-primary" href="#products">
+                Shop Now
+              </a>
+              <a class="home-button home-button-secondary" href="#contact">
+                Learn More
+              </a>
+            </div>
+          </div>
 
-          <div class="hero-actions">
-            <RouterLink class="button-primary" to="/products">
-              Explore Collection
-            </RouterLink>
-            <a
-              class="button-secondary"
-              :href="whatsappHref"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Contact Seller
-            </a>
+          <div class="home-hero-media">
+            <img
+              :src="showcaseProducts[0].image"
+              alt="Cat using modern litter box"
+            />
           </div>
         </div>
       </section>
 
-      <section id="products" class="section-block">
-        <div class="section-heading centered-heading">
-          <p class="section-kicker">Featured Products</p>
-          <h3>A selection of our most popular pieces</h3>
-          <p>Clean browsing, premium presentation, and direct inquiry flow.</p>
+      <section id="products" class="home-products">
+        <div class="home-section-heading">
+          <h3>Our Premium Collection</h3>
+          <p>
+            Discover the perfect litter box solution for your feline friend. All
+            products come with a 30-day satisfaction guarantee.
+          </p>
         </div>
 
-        <div class="product-grid featured-grid">
+        <div class="home-product-grid home-product-grid-five">
           <RouterLink
-            v-for="product in featuredProducts"
+            v-for="product in showcaseProducts"
             :key="product.id"
-            class="product-card product-link-card"
+            class="home-product-card"
             :to="`/products/${product.slug}`"
           >
-            <div class="product-image">
+            <div class="home-product-image">
               <img :src="product.image" :alt="product.name" />
             </div>
-            <div class="product-body">
-              <p class="product-category">{{ product.category }}</p>
+
+            <div class="home-product-body">
               <h4>{{ product.name }}</h4>
-              <p class="product-description">{{ product.description }}</p>
-              <div class="product-footer">
+
+              <div class="home-product-rating">
+                <div class="home-stars" aria-hidden="true">
+                  <span
+                    v-for="star in 5"
+                    :key="star"
+                    :class="{ filled: star <= Math.floor(product.rating) }"
+                  >
+                    ★
+                  </span>
+                </div>
+                <span>({{ product.reviews }})</span>
+              </div>
+
+              <ul class="home-product-points">
+                <li v-for="point in product.points" :key="point">{{ point }}</li>
+              </ul>
+
+              <div class="home-product-footer">
                 <strong>${{ product.price.toFixed(2) }}</strong>
-                <span>View Details</span>
+                <span class="home-view-button">View</span>
               </div>
             </div>
           </RouterLink>
         </div>
-
-        <div class="section-cta">
-          <RouterLink class="button-secondary" to="/products">
-            View All Products
-          </RouterLink>
-        </div>
       </section>
 
-      <section id="features" class="section-block values-section">
-        <div class="feature-grid value-grid">
-          <article v-for="item in features" :key="item.title" class="feature-card value-card">
-            <div class="value-icon">{{ item.icon }}</div>
+      <section id="features" class="home-features">
+        <div class="home-section-heading">
+          <h3>Why Choose PurrfectBox?</h3>
+          <p>
+            Trusted by thousands of cat owners worldwide. Experience the
+            difference quality makes.
+          </p>
+        </div>
+
+        <div class="home-feature-grid">
+          <article
+            v-for="item in featureCards"
+            :key="item.title"
+            class="home-feature-card"
+          >
+            <div class="home-feature-icon">{{ item.icon }}</div>
             <h4>{{ item.title }}</h4>
-            <p>{{ item.text }}</p>
+            <p>{{ item.description }}</p>
           </article>
         </div>
+
+        <div class="home-banner">
+          <h4>Join 50,000+ Happy Cat Owners</h4>
+          <p>
+            “Best investment I've made for my cats. The odor control is
+            incredible!”
+          </p>
+          <div class="home-banner-stats">
+            <div>
+              <strong>50K+</strong>
+              <span>Happy Customers</span>
+            </div>
+            <div>
+              <strong>4.8★</strong>
+              <span>Average Rating</span>
+            </div>
+            <div>
+              <strong>98%</strong>
+              <span>Would Recommend</span>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section class="section-block newsletter-band">
+      <section id="contact" class="home-subscribe">
         <div class="newsletter-card newsletter-card-dark">
           <p class="section-kicker section-kicker-light">Stay Updated</p>
           <h3>Subscribe for catalog updates and new arrivals.</h3>
