@@ -1079,16 +1079,24 @@ img {
 }
 
 .home-product-title {
+  position: relative;
   margin: 0;
   font-size: 1.05rem;
   font-weight: 600;
   line-height: 1.42;
-  min-height: 7.95em;
-  padding-bottom: 0.16em;
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
+  height: 7.95em;
   overflow: hidden;
+}
+
+.home-product-title::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 42%;
+  height: 1.6em;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), #ffffff 72%);
+  pointer-events: none;
 }
 
 .home-product-rating {
