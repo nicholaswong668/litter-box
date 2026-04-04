@@ -465,7 +465,7 @@ img {
   flex-direction: column;
   gap: 14px;
   padding: 18px;
-  min-height: 278px;
+  min-height: 430px;
 }
 
 .newsletter-band {
@@ -1160,7 +1160,7 @@ img {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.45;
-  min-height: 8.7em;
+  min-height: 8.75em;
   display: -webkit-box;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
@@ -1175,6 +1175,8 @@ img {
   list-style: none;
   color: #5f6b64;
   font-size: 0.92rem;
+  min-height: 8.6em;
+  align-content: start;
 }
 
 .catalog-points li::before {
@@ -1198,7 +1200,8 @@ img {
   justify-content: space-between;
   gap: 12px;
   margin-top: auto;
-  padding-top: 6px;
+  padding-top: 10px;
+  border-top: 1px solid #eef1f4;
 }
 
 .catalog-footer strong {
