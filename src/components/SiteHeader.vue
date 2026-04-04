@@ -8,8 +8,7 @@ import { navigation } from "../data";
     <RouterLink class="logo-block" to="/">
       <div class="logo-icon">ACJ</div>
       <div>
-        <p class="logo-label">Anchongji (An Chong Ji)</p>
-        <h1 class="logo-wordmark">Anchongji（安宠吉）</h1>
+        <h1 class="logo-wordmark">ANCHONGJI</h1>
       </div>
     </RouterLink>
 
